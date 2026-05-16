@@ -76,9 +76,9 @@ with col_registro:
     
     # Generador automático de QR nativo usando la URL actual de la app
     try:
-        # Detectamos la URL de manera dinámica o puedes escribirla fija una vez publicada
-        url_actual = "https://ruleta-jstqfmjfad7q2pfsrqxmxx.streamlit.app" # Reemplaza con tu link definitivo
-        qr_url = f"https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl={url_actual}"
+        url_actual = "https://ruleta-jstqfmjfad7q2pfsrqxmxx.streamlit.app" # MANTÉN TU LINK REAL AQUÍ
+        # Esta es la nueva línea segura:
+        qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={url_actual}"
         st.image(qr_url, caption="Escanea para ingresar desde el celular")
     except:
         st.write("El QR se generará al publicar la app.")
